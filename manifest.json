@@ -1,0 +1,16 @@
+{
+  "name": "Our Bloomed Love",
+  "short_name": "OBL",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#fdfaf6",
+  "theme_color": "#05472A",
+  "icons": [
+    {
+      "src": "assets/icon512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}
