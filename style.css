@@ -610,7 +610,7 @@ textarea {
   width: 15px;
   height: 15px;
   border: 2px solid var(--ink);
-  border-radius: 50%;
+  border-radius: 40%;
   transition: background 0.4s ease;
 }
 
@@ -690,7 +690,7 @@ textarea {
 
 /* နှိပ်လိုက်ရင် အပြာရောင်မပေါ်ဘဲ ကျုံ့သွားတဲ့ effect ပဲပြမယ် */
 .pin-btn:active {
-  background-color: rgba(179, 0, 0, 0.2) !important;
+  background-color: var(--accent) !important;
   transform: scale(0.9);
   outline: none;
 }
