@@ -22,7 +22,7 @@
         /*background-color: linear-gradient(90deg, #fff 0%, #50c878 100%);*/
         background-color: #fff;
         border-radius: 20px;
-        box-shadow: 0 10px 30px #05472A;
+        box-shadow: 0 10px 30px #05472a;
         backdrop-filter: blur(100px);
         font-family: "MyCustomFont", "Noto Serif Myanmar", sans-serif;
       }
@@ -88,7 +88,7 @@
         cursor: pointer;
         transition: all 0.2s;
         margin-top: 10px;
-        box-shadow: 3px 4px 15px #05472A
+        box-shadow: 3px 4px 15px #05472a;
       }
       .submit-btn:active {
         transform: scale(0.98);
@@ -193,11 +193,11 @@
       }
 
       #file-help {
-        color: #b30000
+        color: #b30000;
       }
     </style>
   </head>
-  <body style= "min-height: 100vh; padding: 10px">
+  <body style="min-height: 100vh; padding: 10px">
     <div style="max-width: 500px; margin: 10px auto 0 auto; text-align: left">
       <a
         href="../"
@@ -214,7 +214,7 @@
           background: white;
           padding: 8px 15px;
           border-radius: 30px;
-          box-shadow: 0 4px 10px #05472A;
+          box-shadow: 0 4px 10px #05472a;
         "
       >
         ⬅ နောက်သို့
@@ -241,11 +241,7 @@
 
       <div class="form-group">
         <label for="m-location">တည်နေရာ</label>
-        <input
-          type="text"
-          id="m-location"
-          placeholder="ဥပမာ - ရန်ကုန်"
-        />
+        <input type="text" id="m-location" placeholder="ဥပမာ - ရန်ကုန်" />
       </div>
 
       <div class="form-group">
@@ -306,16 +302,19 @@
         />
         <small
           id="file-help"
-          style="color: #b30000; font-size: 11px; display: block; margin-top: 5px"
+          style="
+            color: #b30000;
+            font-size: 11px;
+            display: block;
+            margin-top: 5px;
+          "
         >
           * ဓာတ်ပုံတစ်ပုံတည်း (သို့မဟုတ်) ပုံအများကြီးကို တစ်ပြိုင်နက်
           ရွေးချယ်နိုင်ပါသည်။
         </small>
       </div>
 
-      <div
-        class="form-group"
-      >
+      <div class="form-group">
         <input type="password" id="gh-token" placeholder="key ထည့်ပါ .. " />
       </div>
       <small
@@ -363,7 +362,7 @@
           max-width: 350px;
           width: 85%;
           text-align: center;
-          box-shadow: 0 10px 25px #05472A;
+          box-shadow: 0 10px 25px #05472a;
           animation: popIn 0.3s ease-in-out;
         "
       >
@@ -398,7 +397,7 @@
             style="
               height: 100%;
               width: 0%;
-              background: linear-gradient(90deg, #05472A, var(--accent));
+              background: linear-gradient(90deg, #05472a, var(--accent));
               transition: width 0.3s ease-in-out;
             "
           ></div>
@@ -705,19 +704,23 @@
                 const compressOptions = {
                   maxSizeMB: 1, // ပုံဆိုက်ကို အများဆုံး 1MB ဝန်းကျင်အထိ ချုံ့ပစ်မည်
                   maxWidthOrHeight: 1920, // Full HD Size ထက် မကျော်အောင် ထိန်းပေးမည်
-                  useWebWorker: true,
+                  useWebWorker: false,
                 };
 
-                showNoti(
-                  `⏳ လုပ်ဆောင်နေပါသည်။`,
-                  "warn",
-                  false,
-                );
+                showNoti(`⏳ လုပ်ဆောင်နေပါသည်။`, "warn", false);
                 try {
-                  file = await imageCompression(file, compressOptions);
+                  // browser-image-compression library ရှိမရှိ သေချာအောင် စစ်ဆေးခြင်း
+                  if (typeof imageCompression !== "undefined") {
+                    file = await imageCompression(file, compressOptions);
+                  } else {
+                    console.warn(
+                      "imageCompression library ကို ရှာမတွေ့ပါ။ မူလဖိုင်အတိုင်း တင်ပါမည်။",
+                    );
+                  }
                   extension = "jpg"; // Format အမှန်ရစေရန် standard ပြောင်းလဲခြင်း
                 } catch (compressErr) {
                   console.error("Image compression error:", compressErr);
+                  // ချုံ့တာ Error တက်ရင်လည်း လုပ်ငန်းစဉ် ရပ်မသွားစေဘဲ မူလပုံအတိုင်း ဆက်တင်ခိုင်းမည်
                 }
               }
               const newFileName = `img_${timestamp}.${extension}`;
