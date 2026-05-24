@@ -1,4 +1,4 @@
-const CORRECT_PIN = "0000"; // သင့် PIN Code ကို ဒီမှာ ပြောင်းပါ (ဂဏန်းသီးသန့်ဖြစ်ရမည်)
+const CORRECT_PIN = "2498"; // သင့် PIN Code ကို ဒီမှာ ပြောင်းပါ (ဂဏန်းသီးသန့်ဖြစ်ရမည်)
 let currentPIN = "";
 
 // နံပါတ်ကွက်ကို နှိပ်တဲ့အခါ
@@ -390,7 +390,7 @@ function toMyanmarNumber(num) {
 }
 
 function updateLoveCounter() {
-  const startDate = new Date("2023-10-04"); // ကိုကိုတို့ စတင်ခဲ့တဲ့ရက်စွဲ
+  const startDate = new Date("2018-09-24"); // ကိုကိုတို့ စတင်ခဲ့တဲ့ရက်စွဲ
   const now = new Date();
 
   let years = now.getFullYear() - startDate.getFullYear();

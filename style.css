@@ -493,6 +493,7 @@ header {
 }
 
 .heart-inline {
+  color: #b30000;
   display: inline-block;
   animation: heartBeat 1.5s infinite;
 }
