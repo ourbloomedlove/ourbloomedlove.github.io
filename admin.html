@@ -244,7 +244,6 @@
         <input
           type="text"
           id="m-location"
-          value="ရန်ကုန်"
           placeholder="ဥပမာ - ရန်ကုန်"
         />
       </div>
@@ -848,7 +847,7 @@
             throw new Error("data.json ကို Update လုပ်ရတာ မအောင်မြင်ပါ။");
           }
         } catch (err) {
-          status.style.color = "red";
+          status.style.color = "#b30000";
           status.innerText = "❌ " + err.message;
           pContainer.style.display = "none";
         } finally {

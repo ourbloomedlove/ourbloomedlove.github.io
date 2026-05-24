@@ -668,7 +668,7 @@ textarea {
 /* Error Message အတွက် Font နဲ့ အရောင်ကို သေချာသတ်မှတ်ခြင်း */
 #error-msg {
   font-family: "MyCustomFont", "Noto Serif Myanmar", sans-serif;
-  color: #ff4d4d; /* ပိုလင်းတဲ့ အနီရောင် */
+  color: #b30000; /* ပိုလင်းတဲ့ အနီရောင် */
   font-weight: bold;
   min-height: 20px; /* စာသားမရှိတဲ့အချိန်မှာလည်း နေရာလွတ်ယူထားရန် */
 }
@@ -734,7 +734,7 @@ textarea {
 
 .error-text {
   height: 25px;
-  color: #ff4d4d;
+  color: #b30000;
   font-family: "MyCustomFont", sans-serif;
   font-size: 14px;
   margin-bottom: 10px;
